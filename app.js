@@ -3,7 +3,7 @@ const server = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const userRouter = require('./router/userRouter');
-
+const PORT = process.env.PORT || 3000;
 server.use(express.json())
 server.use(cors(
     {
@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/', {
 }).then(
     () => {
 
-        server.listen(3000, () => {
+        server.listen(PORT, () => {
             console.log('start');
 
         })
